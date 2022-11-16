@@ -1,0 +1,306 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #D32DFF;
+    --secundario: #DE065B;
+    --gris: #757575;
+    --green: #00FF1B;
+    --ginda: #BE006A;
+    --fuente-principal: 3.8rem;
+}
+
+/* Globales */
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*hack para box model*/
+    scroll-snap-type: y mandatory;
+}
+
+/* scroll-snap */
+
+.nav-principal,
+.roots,
+.form{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+@media (max-width: 428px) {
+    html{
+        scroll-snap-type: none;
+    }
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 2rem;
+    font-family: 'Sorts Mill Goudy', serif;
+    color: var(--blanco);
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 2;
+}
+
+section h2{
+   text-align: center;
+   font-family: 'New Rocker', cursive;
+   margin-top: 0rem;
+
+}
+
+.h2-f{
+    margin-top: 15rem;
+}
+
+.titulo{ 
+    text-align: center;
+    color: var(--ginda);
+    font-family: 'New Rocker', cursive;
+}
+
+.shadow{
+    box-shadow: -14px 10px 18px 1px rgba(136,65,226,0.44);
+    background-image: url(../img/vaporwave.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgb(185 51 179 / 30%); */
+    padding: 2rem;
+    border-radius: 4rem;
+}
+
+/* Utilidades */
+
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-d{
+    justify-content: flex-end;
+}
+/* Body */
+
+.p-principal{
+    /* background-color: rgb(0 0 0 / 70%); */
+    background-image: url(../img/weirdcore3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 2.1rem;
+}
+
+.img-ghost{
+    background-image: url(../img/ghostre.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .face-content{ /*codigo para centrar cualquier cosa de arriba a abajo*/
+      text-align: center;
+      display: flex;
+      flex-direction: column;/*al cambiar el display nativamente se ordena de izquierda a derecha*/
+      align-items: center; /*para centrar solo en columna*/
+      margin: 1rem;
+      line-height: 2;
+  }
+
+@media (min-width: 768px) {
+    .face-content{
+        margin-bottom: 50rem;
+    }
+}
+
+  .boton{
+    /* background: var(--secundario); */
+    background-image: url(../img/glitch3.jpg);
+    color: var(--oscuro);
+    padding: 1rem 3rem; /*margen interno*/
+    margin-top: 4rem; /*margen externo*/
+    font-size: 2.3rem;
+    text-decoration: none; /*quita efectos del texto como barra baja de link*/
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem; /* para redondear esquinas de boton*/
+    width: 90%;
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    border: none;
+  }
+
+.boton:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+
+/* Nav */
+.contenedor{
+    max-width:120rem;
+    margin: 0 auto;   
+}
+
+.nav-bg{
+    background-image: url(../img/glitch3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0rem;
+}
+
+.nav-principal{
+    display: flex;  
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .nav-principal{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.nav-principal a{
+    display: block;
+    text-align: center;   
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+.nav-principal a:hover {
+    background-color: var(--primario);
+    color: var(--green);
+}
+
+
+/* roots */
+@media (min-width:768px) {
+    .roots{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-columns: repeat(3, 1fr); simplificacion  */ 
+        column-gap: 2rem;
+    }   
+}
+
+.roots p{
+    font-weight: 5rem;
+}
+
+.roots-p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roots-p p{
+    line-height: 2; /*interlineado*/
+    text-align: center;
+}
+
+.roots-p h4{
+    color: var(--green);
+    /* font-weight: normal; quita el bold del h4 */
+    font-weight: 700px;
+    font-family: 'New Rocker', cursive;
+}
+
+.roots-p .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-image: url(../img/glitch3.jpg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* form */
+.form fieldset{
+    border: none;
+}
+
+.form{
+    width: min(60rem, 100%);
+    background-color: var(--ginda);
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+}
+
+.form legend{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700px;
+    margin-bottom: 2rem;
+    color: var(--green);
+    font-family: 'Creepster', cursive;
+}
+
+@media (min-width: 768px) {
+    .camps-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    } 
+    
+    .camps:nth-child(3),
+    .camps:nth-child(4){  /* evita crear clases al seleccionar solo una en especifico */
+        grid-column: 1/3;
+    }
+
+}
+
+
+.camps textarea{
+    height: 15rem;
+}
+
+.camps{
+    margin-bottom: 1rem;
+}
+
+.camps label{
+    margin-bottom: .5rem;
+    display: block;
+    color: var(--blanco);
+    font-weight: 700px;
+}
+
+
+.input-text{
+    width: 100%;
+    border: none;
+    border-radius: .5rem;
+    padding: 1.5rem;
+}
+
+
+/* footer */
+.p-footer{
+    background-color: rgb(255 56 180/ 0%);
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
